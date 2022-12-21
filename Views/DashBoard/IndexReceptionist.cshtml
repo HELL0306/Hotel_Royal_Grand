@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "IndexReceptionist";
+}
+
+@Html.Raw(TempData["LoginSuccessMessage"])
+
+@Html.Raw(TempData["Request"])
+
+@Html.Raw(TempData["Reply"])
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('../../content/img/background_photo.jpg');
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+
+
+
+
+<h3 style="color:white"> Welcome USER</h3>
+
+<li style="font-size:20px" >@Html.ActionLink("Guest", "Index", "Guest")</li>
+
+<li style="font-size:20px">@Html.ActionLink("Reservation", "Index", "Reservation" )</li>
+
+<li style="font-size:20px" >@Html.ActionLink("Room", "Index", "Room")</li>
+
+<li style="font-size:20px">@Html.ActionLink("BillDetals", "Index", "Bill")</li>
+
+<li style="font-size:20px">@Html.ActionLink("Logout", "LogoutReceptionist", "Dashboard")</li>
+

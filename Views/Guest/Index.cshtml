@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Hotel_Management_Project.Models.Guest>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.guest_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.guest_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.guest_gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.guest_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.guest_contact_num)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.guest_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.guest_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.guest_gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.guest_address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.guest_contact_num)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.guest_id }) |
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.guest_id })
+            </td>
+        </tr>
+    }
+
+</table>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            color:white
+        }
+
+        body {
+            background-image: url('../../content/img/bg_room.jpg');
+            height: auto;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>

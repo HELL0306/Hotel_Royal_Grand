@@ -1,0 +1,75 @@
+﻿@model Hotel_Management_Project.Models.Bill
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Bill</h4>
+       
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group" style="color:black">
+            @Html.LabelFor(model => model.Transaction_type, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Transaction_type, ViewBag.payment as SelectList, "--Select_Payment_Mode--")
+                @*@Html.EditorFor(model => model.Transaction_type, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.Transaction_type, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Total_Bill, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Total_Bill, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Total_Bill, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="color:black">
+            @Html.LabelFor(model => model.Reservation_id, "Reservation_id", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Reservation_id, ViewBag.ReservationId as SelectList, "Select Billing Room")
+                @Html.ValidationMessageFor(model => model.Reservation_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            color: white
+        }
+
+        body {
+            background-image: url('../../content/img/bg_room.jpg');
+            height: auto;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>

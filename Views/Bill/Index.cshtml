@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Hotel_Management_Project.Models.Bill>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Reservation_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Transaction_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total_Bill)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservation_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Transaction_type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_Bill)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.billing_no }) |
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.billing_no })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            color: white
+        }
+
+        body {
+            background-image: url('../../content/img/bg_room.jpg');
+            height: auto;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>

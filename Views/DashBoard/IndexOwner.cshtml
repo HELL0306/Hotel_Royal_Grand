@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "IndexOwner";
+}
+
+@Html.Raw(TempData["LoginSuccessMessage"])
+
+
+
+<h3 style="color:white"> Welcome USER</h3>
+
+
+<li style="font-size:20px">@Html.ActionLink("Manager", "Index", "Manager")</li>
+
+<li style="font-size:20px">@Html.ActionLink("Receptionist", "Index", "Receptionist")</li>
+
+<li style="font-size:20px">@Html.ActionLink("Department", "Index", "Department")</li>
+
+
+<li style="font-size:20px">@Html.ActionLink("Room", "Index", "Room")</li>
+
+<li style="font-size:20px">@Html.ActionLink("BillDetals", "Index", "Bill")</li>
+
+
+
+<li style="font-size:20px"> @Html.ActionLink("Logout", "LogoutOwner", "Dashboard")</li>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('../../content/img/background_photo.jpg');
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+
+
+
+

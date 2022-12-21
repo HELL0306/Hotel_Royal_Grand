@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Hotel_Management_Project.Models.Reservation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th >
+            @Html.DisplayName("Reservation_ID")
+            @*@Html.DisplayNameFor(model => model.reservation_id)*@
+        </th>
+        <th >
+            @Html.DisplayName("Guest_ID ")
+            @*@Html.DisplayNameFor(model => model.guest_id)*@
+        </th>
+        <th >
+            @Html.DisplayName("Receptionist_ID ")
+            @*@Html.DisplayNameFor(model => model.rec_id)*@
+        </th>
+        <th >
+            @Html.DisplayName("Room_ID ")
+            @*@Html.DisplayNameFor(model => model.room_id)*@
+        </th>
+        <th>
+            @Html.DisplayName(" Adults ")
+            @*@Html.DisplayNameFor(model => model.no_of_adults)*@
+        </th>
+        <th>
+            @Html.DisplayName(" Child ")
+            @*@Html.DisplayNameFor(model => model.no_of_child)*@
+        </th>
+        <th>
+            @Html.DisplayName("CheckIn Date ")
+            @*@Html.DisplayNameFor(model => model.checkin_date)*@
+        </th>
+        <th>
+            @Html.DisplayName("CheckOut Date ")
+            @*@Html.DisplayNameFor(model => model.checkout_date)*@
+        </th>
+        @Html.Raw(TempData["ReservationSuccessfully"])
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.reservation_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.guest_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rec_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.room_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.no_of_adults)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.no_of_child)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.checkin_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.checkout_date)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.reservation_id }) |
+
+            @Html.ActionLink("Delete", "Delete", new { id = item.reservation_id })
+        </td>
+    </tr>
+}
+
+</table>
+
+<html>
+<head>
+    <style>
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            color: white
+        }
+
+        body {
+            background-image: url('../../content/img/bg_room.jpg');
+            height: auto;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
